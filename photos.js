@@ -125,7 +125,7 @@ export const photos = [
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0051",
     "shape": "tall"
   },
-  {
+  /*{
     "id": "graduation-2025-011",
     "title": "IMG 20250625 WA0055",
     "category": "graduation-2025",
@@ -133,7 +133,7 @@ export const photos = [
     "image": "./images/Graduation%202025/IMG-20250625-WA0055.jpg",
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0055",
     "shape": "tall"
-  },
+  },*/
   {
     "id": "graduation-2025-012",
     "title": "IMG 20250625 WA0057",
@@ -206,7 +206,7 @@ export const photos = [
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0079",
     "shape": "tall"
   },
-  {
+  /*{
     "id": "graduation-2025-023",
     "title": "IMG 20250625 WA0080",
     "category": "graduation-2025",
@@ -214,7 +214,7 @@ export const photos = [
     "image": "./images/Graduation%202025/IMG-20250625-WA0080.jpg",
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0080",
     "shape": "tall"
-  },
+  },*/
   {
     "id": "graduation-2025-025",
     "title": "IMG 20250625 WA0082",
@@ -296,7 +296,7 @@ export const photos = [
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0102",
     "shape": "tall"
   },
-  {
+  /*{
     "id": "graduation-2025-036",
     "title": "IMG 20250625 WA0105",
     "category": "graduation-2025",
@@ -304,7 +304,7 @@ export const photos = [
     "image": "./images/Graduation%202025/IMG-20250625-WA0105.jpg",
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0105",
     "shape": "tall"
-  },
+  },*/
   {
     "id": "graduation-2025-037",
     "title": "IMG 20250625 WA0107",
@@ -566,7 +566,7 @@ export const photos = [
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0243",
     "shape": "tall"
   },
-  {
+  /*{
     "id": "graduation-2025-075",
     "title": "IMG 20250625 WA0247",
     "category": "graduation-2025",
@@ -574,7 +574,7 @@ export const photos = [
     "image": "./images/Graduation%202025/IMG-20250625-WA0247.jpg",
     "alt": "Graduation 2025 photograph, IMG 20250625 WA0247",
     "shape": "square"
-  },
+  },*/
   {
     "id": "graduation-2025-076",
     "title": "IMG 20250625 WA0250",

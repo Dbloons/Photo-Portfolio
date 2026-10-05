@@ -13,7 +13,7 @@ This is a static website and requires no paid hosting, build step, domain, or Ja
 
 The workflow in `.github/workflows/pages.yml` publishes the site on each push to `main` or `master`. If your default branch has a different name, add it to the workflow's `push.branches` list. Future changes go online after you push them and the Pages deployment succeeds.
 
-Before deployment, the workflow runs `scripts/validate-site.py` to check that the photo catalog, image files, and local links are complete and consistent.
+Before deployment, the workflow runs `scripts/validate-site.py` to check that active photo catalog entries refer to existing image files and that local links are valid. Image files can remain in `images/` without appearing in the gallery.
 
 ## Photo collections
 
@@ -46,6 +46,8 @@ Their website copies are organized under `images/`. The original folders are not
 ```
 
 Use a unique `id`, one of the existing collection categories (`food`, `graduation-2025`, `nature`, `photography-class`, `randoms`, or `travel`), and concise descriptive alt text. Use `tall`, `square`, or `landscape` for `shape`.
+
+To temporarily hide a photo without deleting its file, wrap its record in a JavaScript block comment (`/* ... */`).
 
 Photo management is intentionally limited to the repository. Commit and push new image files and their catalog entries to publish them; the public site has no visitor photo-upload feature.
 

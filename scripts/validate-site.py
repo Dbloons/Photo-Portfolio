@@ -7,6 +7,47 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def strip_javascript_comments(source):
+    output = []
+    index = 0
+    in_string = False
+    escaped = False
+
+    while index < len(source):
+        char = source[index]
+        following = source[index + 1] if index + 1 < len(source) else ""
+
+        if in_string:
+            output.append(char)
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            index += 1
+        elif char == '"':
+            in_string = True
+            output.append(char)
+            index += 1
+        elif char == "/" and following == "/":
+            index += 2
+            while index < len(source) and source[index] not in "\r\n":
+                index += 1
+        elif char == "/" and following == "*":
+            index += 2
+            while index + 1 < len(source) and source[index:index + 2] != "*/":
+                if source[index] in "\r\n":
+                    output.append(source[index])
+                index += 1
+            index += 2
+        else:
+            output.append(char)
+            index += 1
+
+    return "".join(output)
+
+
 class LocalAssetParser(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -33,7 +74,8 @@ def main():
         raise SystemExit("photos.js must export its photo catalog as JSON.")
 
     try:
-        photos = json.loads(source[len(prefix):].rsplit(";", 1)[0])
+        catalog = strip_javascript_comments(source[len(prefix):])
+        photos = json.loads(catalog.rsplit(";", 1)[0])
     except json.JSONDecodeError as error:
         raise SystemExit(f"Could not parse photos.js catalog: {error}") from error
 
@@ -67,10 +109,9 @@ def main():
         for path in (ROOT / "images").rglob("*")
         if path.is_file()
     }
-    if image_files != catalog_paths:
-        unlisted = sorted(image_files - catalog_paths)
+    if not catalog_paths.issubset(image_files):
         missing = sorted(catalog_paths - image_files)
-        raise SystemExit(f"Catalog and images/ differ. Unlisted files: {unlisted}; missing files: {missing}")
+        raise SystemExit(f"Catalog refers to missing image files: {missing}")
 
     print(f"Validated {len(photos)} photos and all local HTML assets.")
 
