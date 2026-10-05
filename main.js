@@ -1,4 +1,4 @@
-import { photos } from "./photos.js";
+import { photos } from "./photos.js?v=2";
 
 const collections = [
   { id: "food", label: "Food" },
