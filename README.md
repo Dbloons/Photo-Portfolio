@@ -52,3 +52,5 @@ Photo management is intentionally limited to the repository. Commit and push new
 ## Personal details
 
 The introduction, biography, and portfolio sections are in `index.html`. Update the copy there if Daren’s biography or preferred contact details change.
+
+The browser-tab favicon and Apple touch icon use `favicon.png` in the project root.
