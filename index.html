@@ -63,7 +63,6 @@
         </div>
         <div class="gallery-toolbar">
           <div class="filter-list" id="filter-list" role="group" aria-label="Filter photographs"></div>
-          <button class="upload-trigger" id="open-uploader"><span aria-hidden="true">＋</span> Add photos</button>
         </div>
         <div class="photo-grid" id="photo-grid" aria-live="polite"></div>
         <p class="gallery-empty" id="gallery-empty" hidden>No photographs in this collection yet.</p>
@@ -125,42 +124,5 @@
       <p class="lightbox-count" id="lightbox-count"></p>
     </dialog>
 
-    <dialog class="upload-dialog" id="upload-dialog" aria-labelledby="upload-title">
-      <div class="upload-dialog-head">
-        <div>
-          <p class="eyebrow">Your photo library</p>
-          <h2 id="upload-title">Add to the story.</h2>
-        </div>
-        <button class="dialog-close" data-close-upload aria-label="Close photo library">×</button>
-      </div>
-      <p class="upload-description">
-        Choose images from your device to add them to this browser’s portfolio. They’ll stay here
-        until you export your library or clear this browser’s data.
-      </p>
-      <label class="collection-label" for="photo-category">Add to collection</label>
-      <select id="photo-category" class="collection-select">
-        <option value="my-uploads">My uploads</option>
-        <option value="food">Food</option>
-        <option value="graduation-2025">Graduation 2025</option>
-        <option value="nature">Nature</option>
-        <option value="photography-class">Photography class</option>
-        <option value="randoms">Randoms</option>
-        <option value="travel">Travel</option>
-      </select>
-      <label class="drop-zone" id="drop-zone">
-        <input id="photo-input" type="file" accept="image/*" multiple />
-        <span class="drop-icon" aria-hidden="true">↥</span>
-        <strong>Drop your photos here</strong>
-        <span>or <span class="browse-text">browse files</span> · JPG, PNG, WebP</span>
-      </label>
-      <p class="upload-status" id="upload-status" role="status"></p>
-      <div class="library-actions">
-        <button class="library-action" id="import-library">Import library</button>
-        <input id="library-input" type="file" accept="application/json,.json" hidden />
-        <button class="library-action" id="export-library">Export library</button>
-      </div>
-      <p class="upload-footnote">Browser uploads stay on this device. To publish a photo, add it to <code>images/</code> and register it in <code>photos.js</code>.</p>
-      <div class="uploaded-list" id="uploaded-list"></div>
-    </dialog>
   </body>
 </html>

@@ -47,11 +47,7 @@ Their website copies are organized under `images/`. The original folders are not
 
 Use a unique `id`, one of the existing collection categories (`food`, `graduation-2025`, `nature`, `photography-class`, `randoms`, or `travel`), and concise descriptive alt text. Use `tall`, `square`, or `landscape` for `shape`.
 
-## Add photos in the browser
-
-Use **Add photos** above the gallery to select or drop images and choose a collection. These browser uploads are stored in IndexedDB on the current device; they are not published to a website or server. Use **Export library** to back them up or **Import library** to restore an exported JSON library. Browser-added photos also appear in **My uploads**.
-
-To publish browser-added photos for everyone, copy the image files into `images/` and add their entries to `photos.js`.
+Photo management is intentionally limited to the repository. Commit and push new image files and their catalog entries to publish them; the public site has no visitor photo-upload feature.
 
 ## Personal details
 
