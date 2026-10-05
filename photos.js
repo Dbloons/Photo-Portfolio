@@ -989,7 +989,7 @@ export const photos = [
     "alt": "Travel photograph, IMG 0061",
     "shape": "square"
   },
-  {
+  /*{
     "id": "travel-004",
     "title": "IMG 0065",
     "category": "travel",
@@ -997,7 +997,7 @@ export const photos = [
     "image": "./images/Travel/IMG_0065.jpg",
     "alt": "Travel photograph, IMG 0065",
     "shape": "landscape"
-  },
+  },*/
   {
     "id": "travel-005",
     "title": "IMG 0219",
