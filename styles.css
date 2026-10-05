@@ -83,8 +83,8 @@ h1, h2, p, figure { margin-top: 0; }
 .gallery-end p { margin: 0; font-size: 9px; letter-spacing: .07em; }
 
 .about-section { display: grid; grid-template-columns: 1fr .85fr; align-items: center; gap: 12%; padding: 125px 14% 130px; }
-.about-image { position: relative; height: 440px; }
-.about-image img { height: 100%; object-fit: cover; }
+.about-image { position: relative; width: 100%; max-width: 400px; justify-self: center; }
+.about-image img { height: auto; object-fit: contain; }
 .about-image-note { position: absolute; right: -19px; bottom: 19px; padding: 12px 16px; background: var(--paper); color: var(--muted); font-family: var(--serif); font-size: 12px; font-style: italic; }
 .about-copy .eyebrow { margin-bottom: 22px; }
 .about-copy h2 { margin-bottom: 21px; font-family: var(--serif); font-size: clamp(36px, 4vw, 51px); font-weight: 500; letter-spacing: -.045em; line-height: 1.15; }
@@ -95,7 +95,9 @@ h1, h2, p, figure { margin-top: 0; }
 .contact-section { padding: 94px 20px 91px; background: #e9eee9; text-align: center; }
 .contact-section .eyebrow { margin-bottom: 17px; }
 .contact-section h2 { margin-bottom: 24px; font-family: var(--serif); font-size: clamp(48px, 6.5vw, 75px); font-weight: 500; letter-spacing: -.05em; line-height: 1.05; }
-.contact-link { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid var(--ink); font-size: 12px; font-weight: 600; }
+.contact-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 34px; }
+.contact-link { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid var(--ink); font-size: 12px; font-weight: 600; transition: color .2s, border-color .2s; }
+.contact-link:hover { color: var(--accent); border-color: var(--accent); }
 .contact-link span { color: var(--accent); }
 .contact-footnote { margin: 28px 0 0; color: var(--muted); font-size: 9px; letter-spacing: .09em; }
 .site-footer { min-height: 99px; padding: 20px 7.1%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -128,7 +130,6 @@ dialog::backdrop { background: rgba(22, 22, 20, .82); backdrop-filter: blur(3px)
   .work-section { padding: 72px 7% 90px; }
   .photo-grid { grid-auto-rows: 120px; gap: 10px; }
   .about-section { gap: 9%; padding: 100px 9%; }
-  .about-image { height: 380px; }
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
 }
@@ -164,11 +165,12 @@ dialog::backdrop { background: rgba(22, 22, 20, .82); backdrop-filter: blur(3px)
   .photo-caption > span { font-size: 8px; }
   .gallery-end { margin-top: 24px; }
   .about-section { grid-template-columns: 1fr; gap: 38px; padding: 76px 9% 83px; }
-  .about-image { width: 90%; height: min(102vw, 390px); }
+  .about-image { width: 100%; }
   .about-copy { padding-left: 4%; }
   .about-copy h2 { font-size: 44px; }
   .contact-section { padding: 76px 15px 72px; }
   .contact-section h2 { font-size: clamp(49px, 12vw, 66px); }
+  .contact-options { flex-direction: column; align-items: center; gap: 18px; }
   .contact-footnote { font-size: 8px; letter-spacing: .05em; }
   .site-footer { min-height: 110px; flex-wrap: wrap; justify-content: space-between; gap: 6px 15px; padding: 20px 6%; }
   .site-footer > p { order: 3; flex-basis: 100%; }
